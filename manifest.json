@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "Key Input",
     "description": "This extension lets you manipulate the DOM",
-    "version": "1.3",
+    "version": "1.4",
     "homepage_url": "https://github.com/starfish01/workKeyInput",
     "browser_action": {
         "default_icon": "favicon.png",
@@ -12,7 +12,7 @@
     "content_scripts": [{
         "matches": ["<all_urls>"],
         "all_frames": true,
-        "js":      ["scripts/content.js", "scripts/jquery.min.js"]
+        "js":      ["scripts/content.js"]
     }],
     "permissions": [
         "https://www.app-control.digistorm.com.au/*"

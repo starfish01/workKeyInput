@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var studentButton = document.getElementById('onSwitchStudent');
     var staffButton = document.getElementById('onSwitchStaff');
     var parentButton = document.getElementById('onSwitchParent');
+    var guestButton = document.getElementById('onSwitchGuest');
 
     loginButton.addEventListener('click', function () {
         chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
@@ -11,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
-
     studentButton.addEventListener('click', function () {
         chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
             chrome.tabs.sendMessage(tabs[0].id, {data:'student'}, function(response) {
@@ -33,7 +33,13 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
-
+    guestButton.addEventListener('click', function () {
+        chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+            chrome.tabs.sendMessage(tabs[0].id, {data:'guest'}, function(response) {
+                console.log('success');
+            });
+        });
+    });
 
 
 });
